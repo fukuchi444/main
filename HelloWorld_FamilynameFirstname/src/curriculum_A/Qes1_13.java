@@ -1,3 +1,4 @@
+package curriculum_A;
 /* ----------------------------------
   [概要] 問１ ローカル変数として宣言のみ行う 
   ----------------------------------- 
@@ -33,8 +34,7 @@
 /* -----------------------------------------------------
  [概要] 問２ ローカル変数をローカル内で、初期値を代入して初期化する
  ------------------------------------------------------- */
-package curriculum_A;
-	public class Qes1_13 {
+public class Qes1_13 {
 		public static void main(String[] args){
 			
 			// バイト型
@@ -188,8 +188,7 @@ package curriculum_A;
 			System.out.println("好きな食べ物は" + eat + "です");
 			
 			//BMIは22.6です
-			height = Math.pow(168.5, 2);
-			bmi = ((double)Math.round(weight / (height / 10000) * 10))/10;
+			bmi = ((double)Math.round(weight / (height * height / 10000) * 10))/10;
 			System.out.println(String.format("BMIは" + bmi + "です"));
 			
 			
@@ -221,9 +220,43 @@ package curriculum_A;
 			System.out.println("好きな食べ物は" + eat + "です");
 			
 			//BMIは11.31です
-			height = Math.pow(337.0, 2);
-			bmi = ((double)Math.round(weight / (height / 10000) * 10))/10;
+			bmi = ((double)Math.round(weight / (height * height / 10000) * 100))/100;
 			System.out.println(String.format("BMIは" + bmi + "です"));
+			
+			
+/* -------------------------------------------------
+ [概要] 問１０　問８で使用した年齢が25歳以上ならtrueと出力する
+			　（ｉｆ文不可）
+ --------------------------------------------------- */
+			//問８で使用した年齢：24歳
+			age = 24;
+			System.out.println((age >= 25));
+						
+/* --------------------------------------------------------
+ [概要] 問１１　問８で使用した下記を文字列型に型変換し、繋げて出力する			　
+ 			 【年齢・身長・体重】 (24歳・168.5cm・64.2kg)
+ ---------------------------------------------------------- */
+			height = 168.5;
+			weight = 64.2;
+			String age11 = String.valueOf(age);
+			String height11 = String.valueOf(height);
+			String weight11 = String.valueOf(weight);
+			System.out.println(age11 + height11 + weight11);
+			
+/* -------------------------------------------------------！！！！！おいおいやってねーぞ
+ [概要] 問１２　問１１で変換した【年齢・身長】を整数型に変換し、出力する			　
+ ---------------------------------------------------------　*/
+			//問１１で変換した年齢・身長：24歳・168.5cm
+			Integer age12 = Integer.valueOf(age11);
+			Double height12 = Double.valueOf(height11);
+			System.out.println(age12);
+			System.out.println(height12);
+			
+/* ---------------------------------------------------------------！！！！！おいおいやってねーぞ
+ [概要] 問１３　問１２で変換した　【年齢・身長】で、
+ 			【年齢が25もしくは身長が160以上】であればtrueを出力する（ｉｆ文不可）
+ ----------------------------------------------------------------- */
+			//問１２で変換した年齢・身長：24歳・168.5cm
+			System.out.println((age12 >= 25) || (height12 >= 160));
 		}
-	}
-	
+	}		
