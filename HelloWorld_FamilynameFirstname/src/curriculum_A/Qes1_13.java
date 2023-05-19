@@ -99,7 +99,7 @@ public class Qes1_13 {
 			// ブーリアン型 (boolean)
 			bo = true;
 			
-			System.out.print("\n"); //改行
+			System.out.print("\n"); // 改行
 			
 			
 /* -----------------------------------------------------------
@@ -131,7 +131,7 @@ public class Qes1_13 {
 			// -90 （10引く100をする）
 			System.out.println(by - 100);
 		
-			System.out.print("\n"); //改行
+			System.out.print("\n"); // 改行
 			
 			
 /* ----------------------------------------------------
@@ -148,7 +148,7 @@ public class Qes1_13 {
 			int num1 = 23;
 			System.out.println("ハローJAVA" + (num + num1));
 			
-			System.out.print("\n"); //改行
+			System.out.print("\n"); // 改行
 			
 			
 /* -------------------------------------------------------
@@ -178,27 +178,30 @@ public class Qes1_13 {
 			String eat = "寿司";
 			System.out.println("好きな食べ物は" + eat + "です");
 			
-			System.out.print("\n"); //改行
+			System.out.print("\n"); // 改行
 			
 			
-/* -------------------------------------------------------------
+/* ----------------------------------------------
  * [概要] 問７　問６の自己紹介文に続き、BMIを出力する
  *
-   【5/16　修正点】 値を変数に代入して算出 → 変数のみの計算式を用いて算出
- 　-------------------------------------------------------------- */
+   【5/19　修正点】 身長の単位をcm → mに変更し計算。
+ 　----------------------------------------------- */
 			String title7 = "問７";
 			System.out.println(title7);
 			
 			// 「BMIは○○です」
-			double bmi = ((double)Math.round(weight / ((height * height) / 10000) * 100))/100;
-			System.out.println(String.format("BMIは" + bmi + "です"));
+			height /= 100;
+			double bmi = weight / (height * height);
+			System.out.println("BMIは" + String.format("%.1f",bmi )+ "です");
 			
-			System.out.print("\n"); //改行
+			System.out.print("\n"); // 改行
 			
 			
-/* -------------------------------------------------
+/* --------------------------------------------------
  [概要] 問８　問６で宣言した変数に再代入し、下記の通り出力する
- --------------------------------------------------- */
+ 
+  【5/19　修正点】 231行目、直接数値を入力して計算
+ ---------------------------------------------------- */
 			String title8 = "問８";
 			System.out.println(title8);
 			
@@ -223,16 +226,18 @@ public class Qes1_13 {
 			System.out.println("好きな食べ物は" + eat + "です");
 			
 			// BMIは22.6です
-			bmi = ((double)Math.round(weight / (height * height / 10000) * 10))/10;
-			System.out.println(String.format("BMIは" + bmi + "です"));
+			bmi = 64.2d / (1.685d * 1.685d);
+			System.out.println("BMIは" + String.format("%.1f",bmi )+ "です");
 			
-			System.out.print("\n"); //改行
+			System.out.print("\n"); // 改行
 			
 			
-/* ----------------------------------------
+/* ------------------------------------------
  [概要] 問９　問８の変数【年齢・身長・体重】の数値を
  			和算で自己代入し、下記の通り出力する
- ------------------------------------------ */
+ 			
+ 【5/19　修正点】 270行目、直接数値を入力して計算
+ -------------------------------------------- */
 			String title9 = "問９";
 			System.out.println(title9);
 			
@@ -260,10 +265,10 @@ public class Qes1_13 {
 			System.out.println("好きな食べ物は" + eat + "です");
 			
 			// BMIは11.31です
-			bmi = ((double)Math.round(weight / (height * height / 10000) * 100))/100;
-			System.out.println(String.format("BMIは" + bmi + "です"));
+			bmi = 128.4d / (3.370d * 3.370d);
+			System.out.println("BMIは" + String.format("%.2f",bmi )+ "です");
 			
-			System.out.print("\n"); //改行
+			System.out.print("\n"); // 改行
 			
 			
 /* -------------------------------------------------
@@ -277,7 +282,7 @@ public class Qes1_13 {
 			age = 24;
 			System.out.println((age >= 25));
 			
-			System.out.print("\n"); //改行
+			System.out.print("\n"); // 改行
 			
 			
 /* --------------------------------------------------------
@@ -294,7 +299,7 @@ public class Qes1_13 {
 			String weight11 = String.valueOf(weight);
 			System.out.println(age11 + height11 + weight11);
 			
-			System.out.print("\n"); //改行
+			System.out.print("\n"); // 改行
 			
 			
 /* -------------------------------------------------------
@@ -309,7 +314,7 @@ public class Qes1_13 {
 			System.out.println(age12);
 			System.out.println(height12);
 			
-			System.out.print("\n"); //改行
+			System.out.print("\n"); // 改行
 			
 			
 /* ---------------------------------------------------------------
@@ -322,6 +327,6 @@ public class Qes1_13 {
 			// 問１２で変換した年齢・身長：24歳・168.5cm
 			System.out.println((age12 >= 25) || (height12 >= 160));
 			
-			System.out.print("\n"); //改行
+			System.out.print("\n"); // 改行
 		}
 	}		
