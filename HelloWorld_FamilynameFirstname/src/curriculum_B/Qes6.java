@@ -1,21 +1,70 @@
 package curriculum_B;
 
+import java.util.Scanner;
+import java.util.Random;
+
 public class Qes6 {
 	public static void main(String[] args){
-		
-	/* -------------------------------------------
-	 * [概要] 問６ for文を使用して9×20までのかけ算をする
+
+		/* -------------------------------------------
+		 * [概要] 問６ 商品の残数を出力するシステムを作成する
 	  　------------------------------------------- */
 		System.out.println("問６");
-		
-		// 変数tateを1～9まで繰り返す
-		for (int  tate = 1; tate < 10; tate++) {
-			// 変数yokoを1～20まで繰り返す
-			for (int yoko = 1; yoko < 21; yoko++) {
-				// 数字が3桁に満たない場合は、3桁になるまで0を付けて計算式を表示。一式ごとに || で区切る
-				System.out.print(String.format("%03d * %03d = %03d",tate,yoko,tate * yoko) + " || ");
+
+		// 入力された文字を表示させる。
+		// 入力された文字列を、記号の「 、」ごとに区切る。区切り文字を設定。
+		Scanner scan = new Scanner(System.in);
+		scan.useDelimiter("、");
+
+		// 入力できる場所を分かりやすくするため、下記文言を表示する
+		System.out.println("こんにちは～コジ〇電気です！\n在庫を確認したい商品名を入力してください　（複数ある場合は記号の 、で区切ってご入力ください）\n");
+
+		// 配列kojimaに、入力された文字列を「 、」ごとに区切って格納する。
+		String kojima[] = scan.nextLine().split("、");
+
+		// kojimaの各要素を変数itemに格納。1つずつ表示。
+		for (String item : kojima) {
+
+			// 在庫数がランダムで生成されるようにする
+			int stock = new Random().nextInt(12);
+
+			// 入力させた商品名によって、違う文言を表示させる
+			switch (item) {
+			case "パソコン":
+				System.out.println("パソコンの残り台数は" + stock + "台です\n");
+				break;
+
+			case "冷蔵庫":
+				System.out.println("冷蔵庫の残り台数は" + stock + "台です\n");
+				break;
+
+			case "扇風機":
+				System.out.println("扇風機の残り台数は" + stock + "台です\n");
+				break;
+
+			case "洗濯機":
+				System.out.println("洗濯機の残り台数は" + stock + "台です\n");
+				break;
+
+			case "加湿器":
+				System.out.println("加湿器の残り台数は" + stock + "台です\n");
+				break;
+
+			case "テレビ":
+				System.out.println("テレビの残り台数は" + stock + "台です\n");
+				break;
+
+			case "ディスプレイ":
+				//　テレビとディスプレイは同じ商品扱い。ディスプレイの在庫数は、最大個数の11個からランダム生成された在庫数を引く
+				// 変数maxを用意し、最大個数（11個）を代入
+				int max =11;
+				System.out.println("ディスプレイの残り台数は" + (max - stock) + "台です\n");
+				break;
+
+			default :
+				System.out.println("『" + item + "』" + "は指定の商品ではありません。\n");
+				break;
 			}
-			System.out.print("\n");
 		}
 	}
 }
