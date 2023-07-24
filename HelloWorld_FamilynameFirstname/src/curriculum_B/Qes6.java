@@ -55,16 +55,19 @@ public class Qes6 {
 				break;
 
 			case "ディスプレイ":
-				//　テレビとディスプレイは同じ商品扱い。ディスプレイの在庫数は、最大個数の11個からランダム生成された在庫数を引く
+				//　テレビとディスプレイは同じ商品扱い
 				// 変数maxを用意し、最大個数（11個）を代入
+
+				// 【7/24　修正】 条件演算子を追加。equals()メソッドで文字列を判定。テレビの時はテレビを。ディスプレイの時は最大個数の11個から在庫数を引くよう修正
 				int max =11;
-				System.out.println("ディスプレイの残り台数は" + (max - stock) + "台です\n");
+				System.out.println(item.equals("テレビ") ?  "テレビ" : "ディスプレイの残り台数は" + (max - stock) + "台です\n");
 				break;
 
 			default :
 				System.out.println("『" + item + "』" + "は指定の商品ではありません。\n");
 				break;
 			}
+			scan.close();
 		}
 	}
 }
