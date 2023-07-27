@@ -49,7 +49,6 @@ public class Qes1_3 {
 
 
 
-
 			// じゃんけんをした回数をカウントする
 			int count = 0;
 			while (count == count ++) {
@@ -57,11 +56,12 @@ public class Qes1_3 {
 				// 選択肢、「0はグー、1：チョキ、2：パー」を表示
 				// ユーザーが選択した数字(手)を読み取る
 				System.out.println("じゃんけんしよう！数字を入力してね！\n【0:グー 1:チョキ 2:パー】\n");
-				Scanner scan2 = new Scanner(System.in);
 
 				// ユーザーが選択した手を、userとする
 				// 相手の手はCPUとし、ランダムで表示させるため、Randomメソッドを使用
-				int user = scan2.nextInt();
+				
+				// 【7/26修正】 scan2.nextInt();を削除。スキャナーを統一するため、scan.nextInt();に変更
+				int user = scan.nextInt();
 				int CPU = new Random().nextInt(3);
 
 				// ユーザーが選択した手を　「ユーザー名の手は「〇〇」」　と言葉で表示させる
@@ -130,7 +130,6 @@ public class Qes1_3 {
 						break;
 					}
 				}
-				scan2.close();
 			}
 			scan.close();
 		}
