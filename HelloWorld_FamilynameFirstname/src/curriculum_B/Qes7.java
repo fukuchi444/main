@@ -1,8 +1,6 @@
 package curriculum_B;
 
 import java.util.Scanner;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class Qes7 {
 	public static void main(String[] args){
@@ -73,4 +71,7 @@ public class Qes7 {
 		//  全体の平均点を出す。結果を小数で出したいので型変換。小数点第二位まで表示させる。
 		double avg3 = (double)whole / student;
 		System.out.print("全体の平均点は" + String.format("%.2f",avg3) + "点です\n");
+		
+		// 【7/26修正】 スキャナーを終了させるためscan.close();を追記
+		scan.close();
 	}}
