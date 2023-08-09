@@ -1,5 +1,7 @@
 package question1_23; // 処理用
 
+import java.util.Objects;
+
 public class Capsule {
 	/* -----------------------------------------------------------
 	 * [概要] this、setter、getter、フィールドを使用し、指定の文言を出力する
@@ -11,36 +13,31 @@ public class Capsule {
 	private String animal;
 	private double size;
 	private int speed;
+	
 
-
-	// nullチェック用の変数 (double以外)
-	String check1 = null;
-	Integer check2 = null;
-
-
-	// コンストラクタを作成
-	public Capsule() {
+	// コンストラクタを作成  【8/9 修正点：今回コンストラクタ不要につき削除(比較のためコメントアウトにしています)。ｉｆ文でのnullチェック削除】】
+	/*public Capsule() {
 		this.animal = "ライオン";
 		this.size = 2.1;
 		this.speed = 80;
-
-		// nullチェック (double以外)
-		if(animal.equals(check1)) {
-			System.out.println(check1);
-		} else if(speed < -1)
-			System.out.println(check2);
-	}
-
+	}*/
 
 
 	// 変数に値を設定するメソッド(setter)
 	public void setAnimal(String animal){
 		this.animal = animal;
+
+		// nullチェック 【8/9 Objectsクラスを使用したnullチェックを追記】
+		if(Objects.nonNull(animal)) {
+			System.out.println(animal);
+		}
 	}
+
 
 	public void setSize(double size){
 		this.size = size;
 	}
+
 
 	public void setSpeed(int speed){
 		this.speed = speed;

@@ -10,15 +10,20 @@ public class Output {
 
 		// インスタンスを生成
 		Capsule cap = new Capsule();
+		
 
-		// 指定の文言になるように、カプセル化した各メソッドの値を呼び出して出力
-		// 動物名：ライオン
+		// 【8/9 修正点：呼び出し元(このクラス内)でsetterメソッドに値を代入し、getterメソッドで値を呼び出して出力】
+		
+		// setterメソッドを呼び出し、引数に値を代入。getterメソッドで値を取得し、指定の文言になるよう出力。
+		cap.setAnimal("ライオン");
 		System.out.println("動物名：" + cap.getAnimal());
 		
-		// 体長：2.1m
+
+		cap.setSize(2.1);
 		System.out.println("体長：" + cap.getSize() + "m");
 		
-		// 速度：80km/h
+
+		cap.setSpeed(80);
 		System.out.println("速度：" + cap.getSpeed() + "km/h");
 	}
 }
