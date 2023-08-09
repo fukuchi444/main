@@ -1,7 +1,5 @@
 package question1_23; // 処理用
 
-import java.util.Objects;
-
 public class Capsule {
 	/* -----------------------------------------------------------
 	 * [概要] this、setter、getter、フィールドを使用し、指定の文言を出力する
@@ -26,11 +24,6 @@ public class Capsule {
 	// 変数に値を設定するメソッド(setter)
 	public void setAnimal(String animal){
 		this.animal = animal;
-
-		// nullチェック 【8/9 Objectsクラスを使用したnullチェックを追記】
-		if(Objects.nonNull(animal)) {
-			System.out.println(animal);
-		}
 	}
 
 
