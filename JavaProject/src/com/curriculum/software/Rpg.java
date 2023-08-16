@@ -1,7 +1,4 @@
-package com.curriculum.software; // 処理用
-
-import java.util.Random;
-import java.util.Scanner;
+package com.curriculum.software; // (スーパークラス。親。継承させる側。ノーマル。素) 処理用①
 
 public class Rpg {
 
@@ -14,6 +11,8 @@ public class Rpg {
 		・packageを2つ作成し、メインと処理を分ける
 		・命名規則を遵守
  	----------------------------------------------------- */
+	
+	// 【修正点】　名前を入力する処理を実行用のクラス(Brave)に移動
 
 	// フィールドに変数を定義
 	private String status;
@@ -110,36 +109,4 @@ public class Rpg {
 		this.here = here;
 		System.out.println(here);
 	}
-
-
-	// 名前を入力するメソッド
-	public void Name() {
-		// スキャナークラスを呼び出す
-		Scanner scan = new Scanner(System.in);
-
-		// 名前を入力してもらう文言を表示
-		System.out.println("名前を入力してね！\n");
-
-		// 入力された名前を表示し、スキャナークラスを終了する
-		String name = scan.nextLine();
-		System.out.println("こんにちは 「 " + name + " 」 さん\n");
-		scan.close();
-	}
-
-
-	// 乱数を生成して各ステータスに乱数を振り分けるメソッド
-	public void Value() {
-		// ランダムクラスを呼び出す
-		Random rand = new Random();
-
-		// 各ステータス名が入った配列
-		String[] all = {this.hp,this.mp,this.attack,this.alacrity,this.defense};
-
-		// ステータス数分、指定した範囲内で生成した乱数を格納
-		for(int i = 0; i < all.length; i++) {
-			int value = rand.nextInt(970) + 30;
-			System.out.print((all[i]) + ":" + value + "\n");
-		}
-	}
-
 }

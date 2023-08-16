@@ -1,8 +1,9 @@
 package com.curriculum.play; // メイン(実行用)
 
-import com.curriculum.software.Rpg;
+import java.util.Scanner;
+import com.curriculum.software.Sub;
 
-public class Brave extends Rpg{
+public class Brave{
 	public static void main(String[] args) {
 	/* -----------------------------------------------------
 	 	[概要] 名前を入力すると指定の文言が出力されるようにする
@@ -13,26 +14,39 @@ public class Brave extends Rpg{
 			・packageを2つ作成し、メインと処理を分ける
 			・命名規則を遵守
 	 	----------------------------------------------------- */
+		
+		// 【修正点】 名前を入力する処理を実行用のクラス(Brave)で実行させるため、Rpgクラス → Braveクラスに移動。scan.close()を最後の行に移動。
+		
 
-		// インスタンスを生成
-		Rpg rpg = new Rpg();
+		// サブクラスのインスタンスを生成
+		Sub game = new Sub();
 
-		// 名前を入力するメソッドの呼び出し
-		rpg.Name();
+		// スキャナークラスを呼び出す
+		Scanner scan = new Scanner(System.in);
+
+		// 名前を入力してもらう文言を表示
+		System.out.println("名前を入力してね！\n");
+
+		// 入力された名前を表示
+		String name = scan.nextLine();
+		System.out.println("こんにちは 「 " + name + " 」 さん\n");
 		
 
 		// 各ステータス名を代入する
-		rpg.setStatus("ステータス");
-		rpg.setHp("HP");
-		rpg.setMp("MP");
-		rpg.setAttack("攻撃力");
-		rpg.setAlacrity("素早さ");
-		rpg.setDefense("防御力");
+		game.setStatus("ステータス");
+		game.setHp("HP");
+		game.setMp("MP");
+		game.setAttack("攻撃力");
+		game.setAlacrity("素早さ");
+		game.setDefense("防御力");
 
 		// 乱数を生成し、各ステータスに振り分けるメソッドの呼び出し
-		rpg.Value();
+		game.Value();
 
 		// 文言を代入
-		rpg.setHere("\nさあ冒険に出かけよう！");
+		game.setHere("\nさあ冒険に出かけよう！");
+		
+		// スキャナークラスを終了
+		scan.close();
 	}
 }
