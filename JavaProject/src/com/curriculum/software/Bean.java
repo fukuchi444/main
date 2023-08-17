@@ -1,9 +1,19 @@
 package com.curriculum.software; // (スーパークラス。親。継承させる側。ノーマル。素) 処理用①
 
-public class Rpg {
+public class Bean {
 
 	/* -----------------------------------------------------
- 	[概要] 名前を入力すると指定の文言が出力されるようにする
+ 	[概要] 名前を入力すると下記のように出力されるようにする
+ 	
+			こんにちは 「 名前 」 さん
+			ステータス
+			HP：849
+			MP：862
+			攻撃力：375
+			素早さ：937
+			防御力：24
+
+			さあ冒険に出かけよう！
  
  	【条件】 
 		・数値は毎回変わるよう作成
@@ -12,20 +22,20 @@ public class Rpg {
 		・命名規則を遵守
  	----------------------------------------------------- */
 	
-	// 【修正点】　名前を入力する処理を実行用のクラス(Brave)に移動
+	// 【修正点】 statusとhere以外の変数をint型に変更
 
 	// フィールドに変数を定義
 	private String status;
-	private String hp;
-	private String mp;
-	private String attack;
-	private String alacrity;
-	private String defense;
+	private int hp;
+	private int mp;
+	private int attack;
+	private int alacrity;
+	private int defense;
 	private String here;
 
 
 	// コンストラクタを作成(引数あり)
-	public Rpg(String hp, String mp, String attack, String alacrity, String defense) {
+	public Bean(int hp, int mp, int attack, int alacrity, int defense) {
 		this.hp = hp;
 		this.mp = mp;
 		this.attack = attack;
@@ -34,30 +44,30 @@ public class Rpg {
 	}
 
 	// コンストラクタを作成(引数なし)
-	public Rpg() {
+	public Bean() {
 		this.status = "ステータス";
 		this.here = "\nさあ冒険に出かけよう！";
 	}
 
 
 	// 変数の値を取得する(getter)
-	public String getHp(){
+	public int getHp(){
 		return this.hp;
 	}
 
-	public String getMp(){
+	public int getMp(){
 		return this.mp;
 	}
 
-	public String getAttack(){
+	public int getAttack(){
 		return this.attack;
 	}
 
-	public String getAlacrity(){
+	public int getAlacrity(){
 		return this.alacrity;
 	}
 
-	public String getDefense(){
+	public int getDefense(){
 		return this.defense;
 	}
 
@@ -71,29 +81,24 @@ public class Rpg {
 
 
 	// 変数にステータス名を設定する(setter)
-	// HP
-	public void setHp(String hp){
+	public void setHp(int hp){
 		this.hp = hp;
 	}
 
-	// MP
-	public void setMp(String mp){
+	public void setMp(int mp){
 		this.mp = mp;
 	}
 	
-	// 攻撃力
-	public void setAttack(String attack){
+	public void setAttack(int attack){
 		this.attack = attack;
 	}
 
 	
-	// 素早さ
-	public void setAlacrity(String alacrity){
+	public void setAlacrity(int alacrity){
 		this.alacrity = alacrity;
 	}
 
-	// 防御力
-	public void setDefense(String defense){
+	public void setDefense(int defense){
 		this.defense = defense;
 	}
 
