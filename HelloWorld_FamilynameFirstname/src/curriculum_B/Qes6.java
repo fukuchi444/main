@@ -1,4 +1,4 @@
-package curriculum_B;
+package curriculum_B; // 実行用
 
 import java.util.Scanner;
 import java.util.Random;

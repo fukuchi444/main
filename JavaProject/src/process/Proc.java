@@ -41,4 +41,5 @@ public class Proc {
 		if(location.equals(check) || delicious.equals(check) || food.equals(check) || current.equals(check)) {
 			System.out.println(check);
 		}
-	}}
+	}
+}
